@@ -15,7 +15,7 @@ Build a photo organization backend and web interface using Next.js 16 (App Route
 **Testing**: Integration tests (Playwright) covering API endpoints; unit tests for service-layer logic  
 **Target Platform**: Web (Next.js App Router)  
 **Project Type**: Web Application  
-**Performance Goals**: <200ms API response for album fetches  
+**Performance Goals**: &lt;200ms API response for album fetches  
 **Constraints**: Flat album structure (no nesting), Supabase Auth mandated  
 **Scale/Scope**: Initial implementation for single-user photo management; potential for multi-user scaling.
 
@@ -58,22 +58,22 @@ src/
 
 ## Complexity Tracking
 
-> N/A - No constitution violations identified.
+&gt; N/A - No constitution violations identified.
 
 ---
 
 ## Phased Delivery Plan
 
-### Phase 0: Research & Data Modeling
+### Phase 0: Research &amp; Data Modeling
 - Define Supabase SQL schema: `albums` (id, user_id, title, date, sort_order, created_at), `photos` (id, album_id, url, created_at).
 - Map API contracts (Zod schemas).
 
-### Phase 1: Service Layer & Database
+### Phase 1: Service Layer &amp; Database
 - Implement `AlbumService` (CRUD, ordering logic).
 - Implement `PhotoService` (Upload, association).
 - Setup Supabase Auth middleware.
 
-### Phase 2: API & Validation
+### Phase 2: API &amp; Validation
 - Implement Route Handlers (`app/api/...`) with Zod boundary validation.
 - Implement error middleware to ensure machine-readable codes.
 

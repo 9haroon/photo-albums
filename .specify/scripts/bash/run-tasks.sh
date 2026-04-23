@@ -103,6 +103,9 @@ TASKS_TEMPLATE=$(_read_non_empty "$REPO_ROOT/.specify/templates/tasks-template.m
 # Optional refinement context (design references, acceptance criteria, UX notes)
 REFINEMENT=$(_read_non_empty "$REPO_ROOT/specs/REFINEMENT.md")
 
+# Optional MCP server summary (synced by backend when plan/docs phase is enabled)
+MCP_CONTEXT=$(_read_non_empty "$REPO_ROOT/specs/MCP_SERVERS.md")
+
 # Optional artifacts
 RESEARCH=$(_read_non_empty "$FEATURE_DIR/research.md")
 DATA_MODEL=$(_read_non_empty "$FEATURE_DIR/data-model.md")
@@ -163,6 +166,12 @@ ${DATA_MODEL}
 ${CONTRACTS_BLOCK:+## Interface Contracts
 
 ${CONTRACTS_BLOCK}---
+}
+${MCP_CONTEXT:+## Project MCP servers (Ideva Kit)
+
+${MCP_CONTEXT}
+
+---
 }
 
 ## Tasks Template

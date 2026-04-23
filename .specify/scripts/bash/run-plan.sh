@@ -102,6 +102,9 @@ PLAN_TEMPLATE=$(_read_non_empty "$IMPL_PLAN")   # already copied by setup-plan.s
 RESEARCH=$(_read_non_empty "$FEATURE_DIR/research.md")
 DATA_MODEL=$(_read_non_empty "$FEATURE_DIR/data-model.md")
 
+# Optional MCP server summary (synced by backend when plan/docs phase is enabled)
+MCP_CONTEXT=$(_read_non_empty "$REPO_ROOT/specs/MCP_SERVERS.md")
+
 USER_INPUT_BLOCK=""
 [[ -n "$USER_INPUT" ]] && USER_INPUT_BLOCK=$'Additional user input:\n\n'"$USER_INPUT"
 
@@ -141,6 +144,12 @@ ${RESEARCH}
 ${DATA_MODEL:+## Data Model
 
 ${DATA_MODEL}
+
+---
+}
+${MCP_CONTEXT:+## Project MCP servers (Ideva Kit)
+
+${MCP_CONTEXT}
 
 ---
 }
